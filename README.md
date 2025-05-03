@@ -1,66 +1,65 @@
-## Foundry
+# VLayer Web Proof - Twitter Ownership Verification
 
-**Foundry is a blazing fast, portable and modular toolkit for Ethereum application development written in Rust.**
+This project demonstrates the use of **Web Proof** functionality on the VLayer testnet. It leverages the VLayer infrastructure to verify ownership of a Twitter account through cryptographic proofs.
 
-Foundry consists of:
+## ✨ Features
 
--   **Forge**: Ethereum testing framework (like Truffle, Hardhat and DappTools).
--   **Cast**: Swiss army knife for interacting with EVM smart contracts, sending transactions and getting chain data.
--   **Anvil**: Local Ethereum node, akin to Ganache, Hardhat Network.
--   **Chisel**: Fast, utilitarian, and verbose solidity REPL.
+- ✅ Verifies Twitter account ownership using VLayer's notary services
+- 🧪 Includes smart contracts for the prover and verifier
+- 🧰 Simple CLI-based flow using Foundry, Bun, and VLayer CLI
+- 🌐 Hosted UI (optional) for interacting with the proof system
 
-## Documentation
+## 🛠️ Tech Stack
 
-https://book.getfoundry.sh/
+- Solidity (Foundry)
+- Bun (for scripting and CLI interaction)
+- VLayer SDK
+- Optimism Sepolia Testnet
+- TypeScript + React (for optional frontend)
 
-## Usage
+## 🔄 Setup & Run
 
-### Build
+### 1. Clone and Install
 
-```shell
-$ forge build
+```bash
+git clone https://github.com/RIKSON93/myvlayer-web-proof.git
+cd myvlayer-web-proof
+bun install
 ```
 
-### Test
+### 2. Configure
 
-```shell
-$ forge test
+Update `.env.testnet.local` with the appropriate values, including:
+- Your Twitter handle
+- Your wallet address
+- Notary public key
+
+### 3. Prove
+
+```bash
+bun run prove
 ```
 
-### Format
+### 4. Verify (Smart Contract)
 
-```shell
-$ forge fmt
+Deploy and interact with `WebProofVerifier.sol` using Foundry or any EVM-compatible environment.
+
+## 📄 Smart Contracts
+
+Located under `src/vlayer/`:
+- `WebProofProver.sol`
+- `WebProofVerifier.sol`
+
+## ✅ Test
+
+```bash
+forge test
 ```
 
-### Gas Snapshots
+## 🧠 Concept
 
-```shell
-$ forge snapshot
-```
+This proof system establishes a trustless link between a wallet address and a Twitter account using cryptographic notaries and VLayer verification infrastructure.
 
-### Anvil
+---
 
-```shell
-$ anvil
-```
-
-### Deploy
-
-```shell
-$ forge script script/Counter.s.sol:CounterScript --rpc-url <your_rpc_url> --private-key <your_private_key>
-```
-
-### Cast
-
-```shell
-$ cast <subcommand>
-```
-
-### Help
-
-```shell
-$ forge --help
-$ anvil --help
-$ cast --help
-```
+Made with ❤️ for the **VLayer Proof of Innovation** contest.
